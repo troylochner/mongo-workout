@@ -1,10 +1,20 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
+
+
+/*
+mongoose.connect("mongodb+srv://tdl-basic-admin:lmit!MONGO1220@cluster0.zwera.mongodb.net/workout?retryWrites=true&w=majority", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});*/
+
 mongoose.connect("mongodb://localhost/workout", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
+
+
 
 let workoutSeed = [
   {
@@ -54,6 +64,17 @@ let workoutSeed = [
         name: "Running",
         duration: 25,
         distance: 4
+      }
+    ]
+  },
+  {
+    day: new Date(new Date().setDate(new Date().getDate() - 7)),
+    exercises: [
+      {
+        type: "cardio",
+        name: "Walking",
+        duration: 25,
+        distance: 1
       }
     ]
   },
